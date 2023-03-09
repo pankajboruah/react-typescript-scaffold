@@ -8,6 +8,19 @@ module.exports = {
 		react: {
 			version: 'detect',
 		},
+		aliases: {
+			app: path.resolve(__dirname, 'src'),
+			modules: './src/modules',
+		},
+		'import/resolver': {
+			alias: {
+				map: [
+					['app', './src'],
+					['modules', './src/modules'],
+				],
+				extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+			},
+		},
 	},
 	extends: [
 		'plugin:react/recommended',
